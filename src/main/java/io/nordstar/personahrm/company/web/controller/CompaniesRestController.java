@@ -5,6 +5,7 @@ package io.nordstar.personahrm.company.web.controller;
 //   Standard Libraries Imports
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 //   Third Party Libraries Imports
@@ -88,8 +89,10 @@ public class CompaniesRestController {
 
         if ( l.size ( ) > CompaniesRestController.EMPTY_COMPANY_LIST ) {
             response = new ResponseEntity ( l, HttpStatus.OK );
+
         } else {
             response = new ResponseEntity ( l, HttpStatus.NOT_FOUND );
+
         }
 
         return response;

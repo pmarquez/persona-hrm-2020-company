@@ -39,7 +39,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ContractPostRec {
+public class ContractPostRec extends PostBaseRec {
     private int           contractPostCode;
     private int           contractCode;
     private int           departmentCode;
