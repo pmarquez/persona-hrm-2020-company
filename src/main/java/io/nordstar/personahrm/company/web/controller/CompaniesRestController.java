@@ -55,10 +55,10 @@ public class CompaniesRestController {
     private static final int EMPTY_ORG_REC_NODE_LIST = 0;
     
 //   Response Status
-    private static final String OPERATION_SUCCESSFUL                            = "COMPANIES_001";   //   The requested operation was succesfully completed.
+    private static final String OPERATION_SUCCESSFUL                            = "COMPANIES_001";   //   The requested operation was successfully completed.
     private static final String NO_COMPANY_FOUND                                = "COMPANIES_002";   //   Could not find requested company.
     private static final String NO_COMPANIES_FOUND                              = "COMPANIES_003";   //   The requested list of companies is empty.
-    private static final String INVALID_USER_PRIVILLEGES                        = "COMPANIES_004";   //   User does not have the required privilleges for this call.
+    private static final String INVALID_USER_PRIVILEGES                         = "COMPANIES_004";   //   User does not have the required privileges for this call.
     private static final String INVALID_AUTHORIZATION_TOKEN                     = "COMPANIES_005";   //   Authorization token received is not valid.
     private static final String INTERNAL_ERROR_ENCOUNTERED                      = "COMPANIES_006";   //   An internal error was encountered.
     private static final String REQUESTED_COMPANY_EXISTS                        = "COMPANIES_007";   //   The requested company exists.

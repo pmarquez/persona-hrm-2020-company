@@ -43,11 +43,11 @@ import lombok.NoArgsConstructor;
 public class CompanyBaseRec {
     
     protected int          companyCode;
-    protected String       taxId;
-    protected String       name;
+    protected String       companyTaxId;
+    protected String       companyName;
 
     protected int          companyTypeCode;
-    protected String       companyType;
+    protected String       companyTypeName;
 
     protected String       companySocialSecurityNumber;
 
