@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 //   FENIX Framework Imports
 
 //   Application Domain Imports
-import io.nordstar.personahrm.company.dao.CompanyDAO;
+import io.nordstar.personahrm.company.dao.CompanyRepositoryImpl;
 import io.nordstar.personahrm.company.model.company.CompanyBaseRec;
 import io.nordstar.personahrm.company.model.company.CompanyRec;
 import io.nordstar.personahrm.company.model.organization.CompanyOrgRec;
@@ -40,7 +40,7 @@ import io.nordstar.personahrm.company.model.organization.CompanyOrgRec;
 public class CompanyServiceImpl implements CompaniesService {
 
     @Autowired
-    private CompanyDAO companyDAO;
+    private CompanyRepositoryImpl companyDAO;
 
     @Override
     public List<CompanyBaseRec> retrieveCompanies ( ) {

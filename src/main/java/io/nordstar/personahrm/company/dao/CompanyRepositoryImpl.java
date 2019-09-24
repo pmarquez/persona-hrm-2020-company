@@ -1,6 +1,7 @@
 package io.nordstar.personahrm.company.dao;
 
 import io.nordstar.personahrm.company.model.company.CompanyBaseRec;
+import io.nordstar.personahrm.company.model.company.CompanyRec;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.InvalidResultSetAccessException;
@@ -9,11 +10,34 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * CompanyRepositoryImpl.java<br><br>
+ * Creation Date 2019-09-24 14:11 PT<br><br>
+ * <b>DESCRIPTION:</b><br><br>
+ * <p>Rest Controller for all things COMPANY</p>
+ *
+ *<PRE>
+ *<table width="90%" border="1" cellpadding="3" cellspacing="2">
+ *<tr><th colspan="2">   History   </th></tr>
+ *
+ *<tr>
+ *<td width="20%">Version 1.0<br>
+ * Version Date: 2019-09-24 14:11 PT<br>
+ * Version Creator: Paulo Márquez</td>
+ *<td width="80%"><p>Creation</p></td>
+ *</tr>
+ *</table>
+ *</PRE>
+ * @author Paulo Márquez
+ * @version 1.0 - 2019-09-24 14:11 PT
+ */
 @Repository
-public class CompanyDAO {
+public class CompanyRepositoryImpl implements CompanyRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+//   Companies CRUD
 
     private static final String RETRIEVE_COMPANIES_SQL_QUERY = "SELECT hrm_comp_companyentity.companyCode, "                                            +
                                                                       "IFNULL(hrm_comp_companyentity.companyTaxId,'') AS TAX_ID, "                      +
@@ -30,6 +54,25 @@ public class CompanyDAO {
                                                                "LEFT OUTER JOIN hrm_comp_companytypeentity ON hrm_comp_companytypeentity.companyTypeCode = hrm_comp_companyentity.companyTypeCode " +
 
                                                                "ORDER BY hrm_comp_companyentity.companyName";
+
+
+    /**
+     *
+     */
+    @Override
+    public void createCompany ( ) {
+
+    }
+
+    /**
+     *
+     * @param companyCode
+     * @return
+     */
+    @Override
+    public CompanyRec retrieveCompanyByCode ( int companyCode ) {
+        return null;
+    }
 
     /**
      * retrieveCompanies
@@ -58,5 +101,40 @@ public class CompanyDAO {
                                                             );
 
     }
+
+    /**
+     *
+     * @param CompanyCode
+     * @param companyRec
+     */
+    @Override
+    public void updateCompany ( int CompanyCode, CompanyRec companyRec ) {
+
+    }
+
+    /**
+     *
+     * @param companyCode
+     */
+    @Override
+    public void deleteCompany ( int companyCode ) {
+
+    }
+
+
+    //   Departments CRUD
+
+    private static final String RETRIEVE_COMPANY_DEPARTMENTS_SQL_QUERY = "SELECT hrm_comp_departmententity.departmentCode, "                                                                            +
+                                                                                "hrm_comp_departmententity.companyCode, "                                                                               +
+                                                                                "hrm_comp_companyentity.companyName, "                                                                                  +
+                                                                                "hrm_comp_departmententity.departmentName "                                                                             +
+
+                                                                                "FROM hrm_comp_departmententity "                                                                                       +
+
+                                                                                "LEFT OUTER JOIN hrm_comp_companyentity ON hrm_comp_companyentity.companyCode = hrm_comp_departmententity.companyCode " +
+
+                                                                                "WHERE hrm_comp_departmententity.active = TRUE";
+
+
 
 }
