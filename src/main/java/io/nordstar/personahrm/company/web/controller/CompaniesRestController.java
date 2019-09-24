@@ -43,9 +43,6 @@ import io.nordstar.personahrm.company.web.services.CompaniesService;
  * @author Paulo Márquez
  * @version 1.0 - 2019-09-18 13:58 PT
  */
-//TODO Token Authorization
-//TODO Handle User Profiles
-//TODO MultiTenancy - Create Account-Company Hierarchy.
 @RestController
 public class CompaniesRestController {
 
