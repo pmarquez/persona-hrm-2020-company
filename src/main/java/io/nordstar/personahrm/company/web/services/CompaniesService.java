@@ -8,10 +8,24 @@ import java.util.List;
 
 public interface CompaniesService {
 
+    /**
+     *
+     * @return
+     */
     public List<CompanyBaseRec> retrieveCompanies ( );
 
-    public CompanyRec retrieveCompany ( int companyCode );
+    /**
+     *
+     * @param companyCode
+     * @return
+     */
+    public CompanyRec retrieveCompanyByCode ( int companyCode );
 
+    /**
+     *
+     * @param companyCode
+     * @return
+     */
     public List<CompanyOrgRec> retrieveCompanyOrganization ( int companyCode );
 
 }

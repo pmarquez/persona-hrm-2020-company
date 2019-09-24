@@ -2,18 +2,17 @@
 package io.nordstar.personahrm.company.model.company;
 
 //   Standard Libraries Imports
-
-
+import java.time.LocalDateTime;
+import java.util.List;
 //   Third Party Libraries Imports
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 //   FENIX Framework Imports
 
 
 //   Application Domain Imports
-
+import io.nordstar.personahrm.company.model.postalAddress.PostalAddressRec;
+import lombok.NoArgsConstructor;
 
 /**
  * CompanyRec.java<br/><br/>
@@ -37,9 +36,49 @@ import lombok.NoArgsConstructor;
  * @version 1.0 - 2019-09-18 10:21 PT
  */
 @Data
-//@NoArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor
 public class CompanyRec extends CompanyBaseRec {
-//    private CompanyContactList     contacts;
-//    private PostalAddressRecList   postalAddresses;
+//    private List<CompanyContactRec>  contacts;
+    private List<PostalAddressRec> postalAddresses;
+
+    /**
+     * All Args Constructor
+     * @param companyCode
+     * @param companyTaxId
+     * @param companyName
+     * @param companyTypeCode
+     * @param companyTypeName
+     * @param companySocialSecurityNumber
+     * @param email
+     * @param web
+     * @param phone
+     * @param fax
+     * @param creationDate
+     * @param active
+     * @param postalAddresses
+     */
+    public CompanyRec ( int companyCode,
+                        String companyTaxId,
+                        String companyName,
+                        int companyTypeCode,
+                        String companyTypeName,
+                        String companySocialSecurityNumber,
+                        String email,
+                        String web,
+                        String phone,
+                        String fax,
+                        LocalDateTime creationDate,
+                        boolean active,
+                        List<PostalAddressRec> postalAddresses ) {
+
+        super ( companyCode, companyTaxId, companyName, companyTypeCode, companyTypeName, companySocialSecurityNumber, email, web, phone, fax, creationDate, active );
+
+        this.postalAddresses = postalAddresses;
+
+    }
+
+    public CompanyRec ( List<PostalAddressRec> postalAddresses ) {
+        this.postalAddresses = postalAddresses;
+    }
+
 }

@@ -42,6 +42,10 @@ public class CompanyServiceImpl implements CompaniesService {
     @Autowired
     private CompanyRepositoryImpl companyDAO;
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<CompanyBaseRec> retrieveCompanies ( ) {
 
@@ -50,9 +54,17 @@ public class CompanyServiceImpl implements CompaniesService {
         return companies;
     }
 
+    /**
+     *
+     * @param companyCode
+     * @return
+     */
     @Override
-    public CompanyRec retrieveCompany ( int companyCode ) {
-        return null;
+    public CompanyRec retrieveCompanyByCode ( int companyCode ) {
+
+        CompanyRec company = companyDAO.retrieveCompanyByCode ( companyCode );
+
+        return company;
     }
 
     @Override

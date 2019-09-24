@@ -4,8 +4,6 @@ package io.nordstar.personahrm.company.web.controller;
 
 //   Standard Libraries Imports
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 
 //   Third Party Libraries Imports
@@ -100,10 +98,10 @@ public class CompaniesRestController {
      * @param companyCode the ID that uniquely identifies a given company.
      * @return ResponseRec<CompanyRec>
      */
-    @GetMapping ( value = "/companiesAPI/1.0/companies/companies/{companyCode}" )
-    public ResponseEntity<CompanyRec> retrieveCompany ( @PathVariable int companyCode ) {
+    @GetMapping ( value = "/companiesAPI/1.0/companies/company/{companyCode}" )
+    public ResponseEntity<CompanyRec> retrieveCompanyByCode ( @PathVariable int companyCode ) {
 
-        CompanyRec r = companiesService.retrieveCompany ( companyCode );
+        CompanyRec r = companiesService.retrieveCompanyByCode ( companyCode );
 
         ResponseEntity response = null;
 
@@ -129,7 +127,7 @@ public class CompaniesRestController {
     @RequestMapping ( value = "/companiesAPI/1.0/companies/exists/{companyCode}", method = RequestMethod.GET )
     public ResponseEntity companyExists ( @PathVariable int companyCode, HttpServletRequest request ) {
 
-        CompanyRec r = companiesService.retrieveCompany ( companyCode );
+        CompanyRec r = companiesService.retrieveCompanyByCode ( companyCode );
 
         ResponseEntity response = null;
 
