@@ -2,6 +2,8 @@ package io.nordstar.personahrm.company.dao;
 
 import io.nordstar.personahrm.company.model.company.CompanyBaseRec;
 import io.nordstar.personahrm.company.model.company.CompanyRec;
+import io.nordstar.personahrm.company.model.department.DepartmentBaseRec;
+import io.nordstar.personahrm.company.model.department.DepartmentRec;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.InvalidResultSetAccessException;
@@ -60,7 +62,7 @@ public class CompanyRepositoryImpl implements CompanyRepository {
      *
      */
     @Override
-    public void createCompany ( ) {
+    public void createCompany ( CompanyRec company ) {
 
     }
 
@@ -134,6 +136,53 @@ public class CompanyRepositoryImpl implements CompanyRepository {
                                                                                 "LEFT OUTER JOIN hrm_comp_companyentity ON hrm_comp_companyentity.companyCode = hrm_comp_departmententity.companyCode " +
 
                                                                                 "WHERE hrm_comp_departmententity.active = TRUE";
+
+    /**
+     *
+     * @param department
+     */
+    @Override
+    public void createDepartment ( DepartmentRec department ) {
+
+    }
+
+    /**
+     *
+     * @param departmentCode
+     * @return
+     */
+    @Override
+    public DepartmentRec retrieveDepartmentByCode ( int departmentCode ) {
+        return null;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public List<DepartmentBaseRec> retrieveDepartments ( ) {
+        return null;
+    }
+
+    /**
+     *
+     * @param departmentCode
+     * @param department
+     */
+    @Override
+    public void updateDepartment ( int departmentCode, DepartmentRec department ) {
+
+    }
+
+    /**
+     *
+     * @param departmentCode
+     */
+    @Override
+    public void deleteDepartment ( int departmentCode ) {
+
+    }
 
 
     //   Posts CRUD

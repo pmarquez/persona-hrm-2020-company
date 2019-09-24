@@ -2,6 +2,8 @@ package io.nordstar.personahrm.company.dao;
 
 import io.nordstar.personahrm.company.model.company.CompanyBaseRec;
 import io.nordstar.personahrm.company.model.company.CompanyRec;
+import io.nordstar.personahrm.company.model.department.DepartmentBaseRec;
+import io.nordstar.personahrm.company.model.department.DepartmentRec;
 
 import java.util.List;
 
@@ -29,17 +31,27 @@ import java.util.List;
 public interface CompanyRepository {
 
 //   Company CRUD
-    public void createCompany ( );
+    public void createCompany ( CompanyRec company );
 
     public CompanyRec retrieveCompanyByCode ( int companyCode );
 
     public List<CompanyBaseRec> retrieveCompanies ( );
 
-    public void updateCompany ( int CompanyCode, CompanyRec companyRec );
+    public void updateCompany ( int companyCode, CompanyRec company );
 
     public void deleteCompany ( int companyCode );
 
-//   Company Departments
+
+//   Departments CRUD
+    public void createDepartment ( DepartmentRec department );
+
+    public DepartmentRec retrieveDepartmentByCode ( int departmentCode );
+
+    public List<DepartmentBaseRec> retrieveDepartments ( );
+
+    public void updateDepartment ( int departmentCode, DepartmentRec department );
+
+    public void deleteDepartment ( int departmentCode );
 
 
 //   Department Posts
