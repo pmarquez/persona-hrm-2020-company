@@ -1,17 +1,41 @@
 package io.nordstar.personahrm.company.web.services;
 
+//   Standard Libraries Imports
+import java.util.List;
+
+//   Third Party Libraries Imports
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+//   FENIX Framework Imports
+
+//   Application Domain Imports
 import io.nordstar.personahrm.company.dao.CompanyDAO;
 import io.nordstar.personahrm.company.model.company.CompanyBaseRec;
 import io.nordstar.personahrm.company.model.company.CompanyRec;
 import io.nordstar.personahrm.company.model.organization.CompanyOrgRec;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * CompanyServiceImpl.java<br/><br/>
+ * Creation Date 2019-09-24 11:16 PT<br/><br/>
+ * <b>DESCRIPTION:</b><br/><br/>
+ * <p></p>
+ *
+ *<PRE>
+ *<table width="90%" border="1" cellpadding="3" cellspacing="2">
+ *<tr><th colspan="2">   History   </th></tr>
+ *
+ *<tr>
+ *<td width="20%">Version 1.0<br/>
+ * Version Date: 2019-09-24 11:16 PT<br/>
+ * Version Creator: Paulo Márquez</td>
+ *<td width="80%"><p>Creation</p></td>
+ *</tr>
+ *</table>
+ *</PRE>
+ * @author Paulo Márquez
+ * @version 1.0 - 2019-09-24 11:16 PT
+ */
 @Service
 public class CompanyServiceImpl implements CompaniesService {
 
