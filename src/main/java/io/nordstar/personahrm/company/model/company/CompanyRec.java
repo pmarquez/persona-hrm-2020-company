@@ -71,14 +71,21 @@ public class CompanyRec extends CompanyBaseRec {
                         boolean active,
                         List<PostalAddressRec> postalAddresses ) {
 
-        super ( companyCode, companyTaxId, companyName, companyTypeCode, companyTypeName, companySocialSecurityNumber, email, web, phone, fax, creationDate, active );
+        super ( companyCode,
+                companyTaxId,
+                companyName,
+                companyTypeCode,
+                companyTypeName,
+                companySocialSecurityNumber,
+                email,
+                web,
+                phone,
+                fax,
+                creationDate,
+                active );
 
         this.postalAddresses = postalAddresses;
 
-    }
-
-    public CompanyRec ( List<PostalAddressRec> postalAddresses ) {
-        this.postalAddresses = postalAddresses;
     }
 
 }

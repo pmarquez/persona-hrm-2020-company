@@ -9,6 +9,8 @@ import java.util.List;
 //   Third Party Libraries Imports
 import io.nordstar.personahrm.company.model.company.CompanyRec;
 import io.nordstar.personahrm.company.model.organization.CompanyOrgRec;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +45,8 @@ import io.nordstar.personahrm.company.web.services.CompaniesService;
  */
 @RestController
 public class CompaniesRestController {
+
+    private static final Logger logger = LogManager.getLogger ( CompaniesRestController.class );
 
 //   Controller Constants
     private static final int EMPTY_COMPANY_LIST      = 0;
@@ -84,11 +88,17 @@ public class CompaniesRestController {
 
         if ( l.size ( ) > CompaniesRestController.EMPTY_COMPANY_LIST ) {
             response = new ResponseEntity ( l, HttpStatus.OK );
+            logger.info ( "Hello from Log4j 2 - num : {}",  "YES FOUND" );
 
         } else {
             response = new ResponseEntity ( l, HttpStatus.NOT_FOUND );
+            logger.info ( "Hello from Log4j 2 - num : {}",  "NOT FOUND" );
 
         }
+
+        logger.debug ( "Hello from Log4j 2 - num : {}",  "DEBUG" );
+        logger.error ( "Hello from Log4j 2 - num : {}",  "ERROR" );
+        logger.info ( "Hello from Log4j 2 - num : {}",  "INFO" );
 
         return response;
     }
