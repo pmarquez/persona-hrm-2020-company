@@ -96,9 +96,10 @@ public class CompaniesRestController {
 
         }
 
-        logger.debug ( "Hello from Log4j 2 - num : {}",  "DEBUG" );
-        logger.error ( "Hello from Log4j 2 - num : {}",  "ERROR" );
-        logger.info ( "Hello from Log4j 2 - num : {}",  "INFO" );
+        logger.trace ( "Hello from Log4j2",  "-TRACE-" );
+        logger.debug ( "Hello from Log4j2",  "-DEBUG-" );
+        logger.error ( "Hello from Log4j2",  "-ERROR Hello, Hola, Halo, Ça va, Ciao, Aloha." );
+        logger.info ( "Hello from Log4j2",  "-INFO-" );
 
         return response;
     }
