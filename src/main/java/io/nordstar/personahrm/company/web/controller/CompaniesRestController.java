@@ -66,21 +66,31 @@ public class CompaniesRestController {
 
     private final CompaniesService companiesService;
 
-    /**
-     * Constructor
-     *
-     * @param companiesService
-     */
-    public CompaniesRestController ( CompaniesService companiesService ) {
+/**
+ * Constructor
+ *
+ * @param companiesService
+ */
+public CompaniesRestController ( CompaniesService companiesService ) {
         this.companiesService = companiesService;
     }
 
     /**
-     * Returns a list of all the companies available to the current role. 
+     *
+     * @param company
+     * @return
+     */
+    @PostMapping ( value = "/companiesAPI/1.0/companies/companies" )
+    public ResponseEntity createCompany ( @RequestBody CompanyRec company ) {
+        return new ResponseEntity ( HttpStatus.CREATED );
+    }
+
+    /**
+     * Returns a list of all the companies available to the current role.
      * @return ResponseRec<List<CompanyBaseRec>>
      */
     @GetMapping ( value = "/companiesAPI/1.0/companies/companies" )
-    public ResponseEntity<List<CompanyBaseRec>> baseCompanies ( ) {
+    public ResponseEntity<List<CompanyBaseRec>> retrieveCompanies ( ) {
 
         List<CompanyBaseRec> l = companiesService.retrieveCompanies ( );
 
@@ -103,7 +113,7 @@ public class CompaniesRestController {
 
         return response;
     }
-    
+
     /**
      * Returns all the relevant information for a company identified by <code>companyCode</code>
      * @param companyCode the ID that uniquely identifies a given company.
@@ -127,7 +137,7 @@ public class CompaniesRestController {
         return response;
 
     }
-    
+
     /**
      * Checks whether a company exists in storage.
      * @param companyCode
@@ -153,7 +163,7 @@ public class CompaniesRestController {
         return response;
 
     }
-        
+
     /**
      * Retrieves a list of Organizational Rec Nodes for the requested company.
      * @param companyCode
@@ -177,5 +187,24 @@ public class CompaniesRestController {
         return response;
 
     }
-        
+
+    /**
+     *
+     * @param companyCode
+     * @param company
+     */
+    @PutMapping ( value = "/companiesAPI/1.0/companies/company/{companyCode}" )
+    public ResponseEntity updateCompany ( @PathVariable int companyCode, @RequestBody CompanyRec company ) {
+        return new ResponseEntity ( HttpStatus.NO_CONTENT );
+    }
+
+    /**
+     *
+     * @param companyCode
+     */
+    @DeleteMapping ( value = "/companiesAPI/1.0/companies/company/{companyCode}" )
+    public ResponseEntity deleteCompany ( @PathVariable int companyCode ) {
+        return new ResponseEntity ( HttpStatus.NO_CONTENT );
+    }
+
 }
