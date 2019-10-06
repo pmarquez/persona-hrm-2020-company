@@ -98,6 +98,8 @@ public class CompanyRepositoryImpl implements CompanyRepository {
         MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
         mapSqlParameterSource.addValue( "companyCode", companyCode );
 
+        System.out.println ( "SqlQuery: " + RETRIEVE_COMPANY_BY_CODE_SQL_QUERY );
+
         return npJdbcTemplate.queryForObject ( RETRIEVE_COMPANY_BY_CODE_SQL_QUERY,
                 mapSqlParameterSource,
                 ( rs, rowNum ) -> new CompanyRec ( rs.getInt        ( "companyCode"                 ),
