@@ -46,37 +46,37 @@ public class CompanyRepositoryImpl implements CompanyRepository {
 
 
 //   Companies CRUD
-    private static final String RETRIEVE_COMPANIES_SQL_QUERY = "SELECT hrm-comp-companyentity.companyCode, "                                            +
-                                                                      "IFNULL(hrm-comp-companyentity.companyTaxId,'') AS TAX_ID, "                      +
-                                                                      "IFNULL(hrm-comp-companyentity.companyName,'') AS COMPANY_NAME, "                 +
-                                                                      "hrm-comp-companyentity.companyTypeCode, "                                        +
-                                                                      "IFNULL(hrm-comp-companytypeentity.name,'') AS COMPANY_TYPE, "                    +
-                                                                      "IFNULL(hrm-comp-companyentity.companySocialSecurityNumber,'') AS COMPANY_SSN, "  +
-                                                                      "IFNULL(hrm-comp-companyentity.web,'') AS WEB, "                                  +
-                                                                      "IFNULL(hrm-comp-companyentity.creationDate,'') AS CREATION_DATE, "               +
-                                                                      "IFNULL(hrm-comp-companyentity.active,'') AS ACTIVE "                             +
+    private static final String RETRIEVE_COMPANIES_SQL_QUERY = "SELECT hrm_comp_companyentity.companyCode, "                                            +
+                                                                      "IFNULL(hrm_comp_companyentity.companyTaxId,'') AS TAX_ID, "                      +
+                                                                      "IFNULL(hrm_comp_companyentity.companyName,'') AS COMPANY_NAME, "                 +
+                                                                      "hrm_comp_companyentity.companyTypeCode, "                                        +
+                                                                      "IFNULL(hrm_comp_companytypeentity.name,'') AS COMPANY_TYPE, "                    +
+                                                                      "IFNULL(hrm_comp_companyentity.companySocialSecurityNumber,'') AS COMPANY_SSN, "  +
+                                                                      "IFNULL(hrm_comp_companyentity.web,'') AS WEB, "                                  +
+                                                                      "IFNULL(hrm_comp_companyentity.creationDate,'') AS CREATION_DATE, "               +
+                                                                      "IFNULL(hrm_comp_companyentity.active,'') AS ACTIVE "                             +
 
-                                                               "FROM hrm-comp-companyentity "                                                           +
+                                                               "FROM hrm_comp_companyentity "                                                           +
 
-                                                               "LEFT OUTER JOIN hrm-comp-companytypeentity ON hrm-comp-companytypeentity.companyTypeCode = hrm-comp-companyentity.companyTypeCode " +
+                                                               "LEFT OUTER JOIN hrm_comp_companytypeentity ON hrm_comp_companytypeentity.companyTypeCode = hrm_comp_companyentity.companyTypeCode " +
 
-                                                               "ORDER BY hrm-comp-companyentity.companyName";
+                                                               "ORDER BY hrm_comp_companyentity.companyName";
 
-    private static final String RETRIEVE_COMPANY_BY_CODE_SQL_QUERY = "SELECT hrm-comp-companyentity.companyCode, "                                            +
-                                                                            "IFNULL(hrm-comp-companyentity.companyTaxId,'') AS TAX_ID, "                      +
-                                                                            "IFNULL(hrm-comp-companyentity.companyName,'') AS COMPANY_NAME, "                 +
-                                                                            "hrm_comp-companyentity.companyTypeCode, "                                        +
-                                                                            "IFNULL(hrm-comp-companytypeentity.name,'') AS COMPANY_TYPE, "                    +
-                                                                            "IFNULL(hrm-comp-companyentity.companySocialSecurityNumber,'') AS COMPANY_SSN, "  +
-                                                                            "IFNULL(hrm-comp-companyentity.web,'') AS WEB, "                                  +
-                                                                            "IFNULL(hrm-comp-companyentity.creationDate,'') AS CREATION_DATE, "               +
-                                                                            "IFNULL(hrm-comp-companyentity.active,'') AS ACTIVE "                             +
+    private static final String RETRIEVE_COMPANY_BY_CODE_SQL_QUERY = "SELECT hrm_comp_companyentity.companyCode, "                                            +
+                                                                            "IFNULL(hrm_comp_companyentity.companyTaxId,'') AS TAX_ID, "                      +
+                                                                            "IFNULL(hrm_comp_companyentity.companyName,'') AS COMPANY_NAME, "                 +
+                                                                            "hrm_comp_companyentity.companyTypeCode, "                                        +
+                                                                            "IFNULL(hrm_comp_companytypeentity.name,'') AS COMPANY_TYPE, "                    +
+                                                                            "IFNULL(hrm_comp_companyentity.companySocialSecurityNumber,'') AS COMPANY_SSN, "  +
+                                                                            "IFNULL(hrm_comp_companyentity.web,'') AS WEB, "                                  +
+                                                                            "IFNULL(hrm_comp_companyentity.creationDate,'') AS CREATION_DATE, "               +
+                                                                            "IFNULL(hrm_comp_companyentity.active,'') AS ACTIVE "                             +
 
-                                                                     "FROM hrm-comp-companyentity "                                                           +
+                                                                     "FROM hrm_comp_companyentity "                                                           +
 
-                                                                     "LEFT OUTER JOIN hrm-comp-companytypeentity ON hrm-comp-companytypeentity.companyTypeCode = hrm-comp-companyentity.companyTypeCode " +
+                                                                     "LEFT OUTER JOIN hrm_comp_companytypeentity ON hrm_comp_companytypeentity.companyTypeCode = hrm_comp_companyentity.companyTypeCode " +
 
-                                                                     "WHERE hrm-comp-companyentity.companyCode = :companyCode";
+                                                                     "WHERE hrm_comp_companyentity.companyCode = :companyCode";
 
 
     /**
