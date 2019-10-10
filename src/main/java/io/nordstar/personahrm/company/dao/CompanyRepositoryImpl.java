@@ -78,7 +78,6 @@ public class CompanyRepositoryImpl implements CompanyRepository {
 
                                                                      "WHERE hrm_comp_companyentity.companyCode = :companyCode";
 
-
     /**
      *
      */
