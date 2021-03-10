@@ -1,4 +1,4 @@
-package io.nordstar.personahrm.company.web.services;
+package io.nordstar.personahrm.company.services;
 
 import io.nordstar.personahrm.company.model.company.CompanyBaseRec;
 import io.nordstar.personahrm.company.model.company.CompanyRec;

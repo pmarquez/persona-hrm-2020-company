@@ -1,4 +1,4 @@
-package io.nordstar.personahrm.company.web.services;
+package io.nordstar.personahrm.company.services;
 
 //   Standard Libraries Imports
 import java.util.List;

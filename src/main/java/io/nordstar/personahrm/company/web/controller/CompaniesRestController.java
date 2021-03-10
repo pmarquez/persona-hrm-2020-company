@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 //   Application Domain Imports
 import io.nordstar.personahrm.company.model.company.CompanyBaseRec;
-import io.nordstar.personahrm.company.web.services.CompaniesService;
+import io.nordstar.personahrm.company.services.CompaniesService;
 
 /**
  * CompaniesRestController.java<br><br>
@@ -43,6 +43,7 @@ import io.nordstar.personahrm.company.web.services.CompaniesService;
  * @author Paulo Márquez
  * @version 1.0 - 2019-09-18 13:58 PT
  */
+@RequestMapping("/PERSONA/companyAPI/1.0/company")
 @RestController
 public class CompaniesRestController {
 
@@ -80,7 +81,7 @@ public CompaniesRestController ( CompaniesService companiesService ) {
      * @param company
      * @return
      */
-    @PostMapping ( value = "/companiesAPI/1.0/companies/companies" )
+    @PostMapping ( value = "/companiny" )
     public ResponseEntity createCompany ( @RequestBody CompanyRec company ) {
         return new ResponseEntity ( HttpStatus.CREATED );
     }
@@ -89,7 +90,7 @@ public CompaniesRestController ( CompaniesService companiesService ) {
      * Returns a list of all the companies available to the current role.
      * @return ResponseRec<List<CompanyBaseRec>>
      */
-    @GetMapping ( value = "/companiesAPI/1.0/companies/companies" )
+    @GetMapping ( value = "/companies" )
     public ResponseEntity<List<CompanyBaseRec>> retrieveCompanies ( ) {
 
         List<CompanyBaseRec> l = companiesService.retrieveCompanies ( );
@@ -119,7 +120,7 @@ public CompaniesRestController ( CompaniesService companiesService ) {
      * @param companyCode the ID that uniquely identifies a given company.
      * @return ResponseRec<CompanyRec>
      */
-    @GetMapping ( value = "/companiesAPI/1.0/companies/company/{companyCode}" )
+    @GetMapping ( value = "/company/{companyCode}" )
     public ResponseEntity<CompanyRec> retrieveCompanyByCode ( @PathVariable int companyCode ) {
 
         CompanyRec r = companiesService.retrieveCompanyByCode ( companyCode );
@@ -145,7 +146,7 @@ public CompaniesRestController ( CompaniesService companiesService ) {
      * @return ResponseRec<Boolean>
      * @since 1.o
      */
-    @RequestMapping ( value = "/companiesAPI/1.0/companies/exists/{companyCode}", method = RequestMethod.GET )
+    @RequestMapping ( value = "/exists/{companyCode}", method = RequestMethod.GET )
     public ResponseEntity companyExists ( @PathVariable int companyCode, HttpServletRequest request ) {
 
         CompanyRec r = companiesService.retrieveCompanyByCode ( companyCode );
@@ -169,7 +170,7 @@ public CompaniesRestController ( CompaniesService companiesService ) {
      * @param companyCode
      * @return
      */
-    @GetMapping ( value = "/companiesAPI/1.0/companies/organization/{companyCode}" )
+    @GetMapping ( value = "/organization/{companyCode}" )
     public ResponseEntity<List<CompanyOrgRec>> retrieveCompanyOrganization ( @PathVariable int companyCode ) {
 
         List<CompanyOrgRec> l = companiesService.retrieveCompanyOrganization ( companyCode );
@@ -193,7 +194,7 @@ public CompaniesRestController ( CompaniesService companiesService ) {
      * @param companyCode
      * @param company
      */
-    @PutMapping ( value = "/companiesAPI/1.0/companies/company/{companyCode}" )
+    @PutMapping ( value = "/company/{companyCode}" )
     public ResponseEntity updateCompany ( @PathVariable int companyCode, @RequestBody CompanyRec company ) {
         return new ResponseEntity ( HttpStatus.NO_CONTENT );
     }
@@ -202,7 +203,7 @@ public CompaniesRestController ( CompaniesService companiesService ) {
      *
      * @param companyCode
      */
-    @DeleteMapping ( value = "/companiesAPI/1.0/companies/company/{companyCode}" )
+    @DeleteMapping ( value = "/company/{companyCode}" )
     public ResponseEntity deleteCompany ( @PathVariable int companyCode ) {
         return new ResponseEntity ( HttpStatus.NO_CONTENT );
     }
